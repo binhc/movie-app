@@ -8,12 +8,36 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            .movie{
+                background: black;
+                border: 1px solid white;
+                color: white;
+                /* padding-top: 3% */
+            }
+            .movie_overview{
+                border: 1px solid white
+            }
+            h1{
+                color: red
+            }
+            h2{
+                color: white;
+                font-size: 12px
+            }
+        </style>
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 movie">
                     <% for(let i = 0; i < parsedData.length; i++){ %>
+                        <div class="col-sm-9 movie_overview"><h1><%= parsedData[i].original_title %></h1>
+                            <br>
+                            <!-- <h2>Summary</h2> -->
+                            <%= parsedData[i].overview %>
+                        </div>
+ 
                         <div class="col-sm-3">
                             <img src="<%= imageBaseUrl + parsedData[i].poster_path %>" />
                         </div>

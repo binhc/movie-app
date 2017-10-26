@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   request.get(nowPlayingUrl, (error, response, movieData)=>{
     var parsedData = JSON.parse(movieData);
     console.log ("==============")
-    console.log(parsedData.length);
+    console.log(parsedData);
     res.render('index',{
       parsedData: parsedData.results,
       imageBaseUrl: imageBaseUrl 
